@@ -144,6 +144,34 @@
   .proofline{margin-top:48px;font-size:clamp(18px,2.1vw,26px);font-weight:300;max-width:740px}
   .proofline b{font-weight:700}
 
+  /* ===== CASES ===== */
+  .section-short{min-height:auto;padding:120px 0 20px}
+  .case{min-height:100vh}
+  .case-no{font-size:clamp(54px,7vw,112px);font-weight:800;line-height:.88;letter-spacing:-3px;
+    background:linear-gradient(180deg,rgba(124,196,255,.95),rgba(124,196,255,.10));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .case-tag{display:block;text-transform:uppercase;letter-spacing:3px;font-size:13px;font-weight:600;color:var(--muted);margin-top:14px}
+  .case-split{display:grid;grid-template-columns:1fr 1fr;margin-top:48px;border-top:1px solid var(--line)}
+  .case-col{padding:48px 0}
+  .case-col.task{padding-right:60px}
+  .case-col.sol{padding-left:60px;border-left:1px solid var(--line);position:relative}
+  .case-col.sol:before{content:"";position:absolute;left:-1px;top:0;width:1px;height:130px;background:linear-gradient(var(--accent),transparent);box-shadow:0 0 14px var(--accent)}
+  .col-label{display:inline-flex;align-items:center;gap:12px;text-transform:uppercase;letter-spacing:4px;font-size:12px;font-weight:700;margin-bottom:22px}
+  .col-label:before{content:"";width:26px;height:1px;background:currentColor;opacity:.55}
+  .col-label.t{color:var(--muted2)}
+  .col-label.s{color:var(--accent)}
+  .case-col p{font-size:clamp(16px,1.5vw,19px);font-weight:300;line-height:1.66;color:rgba(255,255,255,.8)}
+  .case-col.task p{color:var(--muted)}
+  .case-result{margin-top:26px;padding:16px 20px;border:1px solid rgba(124,196,255,.32);border-radius:4px;
+    background:rgba(124,196,255,.05);font-size:15px;font-weight:500}
+  .case-result b{color:var(--accent)}
+  @media(max-width:860px){
+    .case-split{grid-template-columns:1fr}
+    .case-col.task{padding-right:0;padding-bottom:28px}
+    .case-col.sol{padding-left:0;border-left:none;border-top:1px solid var(--line)}
+    .case-col.sol:before{display:none}
+    .case{min-height:auto}
+  }
+
   /* ===== PRICING ===== */
   .tiers{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:52px}
   .tier{position:relative;border:1px solid var(--line);border-radius:6px;padding:42px 36px;display:flex;flex-direction:column;
@@ -268,12 +296,88 @@
       <h2 class="reveal">Практик, а не теоретик</h2>
       <p class="lead reveal">Всё, что я продаю, я сначала собираю себе. Вот несколько следов на деле.</p>
       <div class="stats">
-        <div class="stat reveal"><div class="big">90K+</div><div class="lbl">просмотров у поста о приложении, которое я собрал за вечер</div></div>
+        <div class="stat reveal"><div class="big">5</div><div class="lbl">готовых Reels из одного длинного видео за один прогон</div></div>
         <div class="stat reveal"><div class="big">8</div><div class="lbl">собственных Claude Skills в продакшене</div></div>
         <div class="stat reveal"><div class="big">1&nbsp;вечер</div><div class="lbl">локальный аналог платного сервиса за $180/год</div></div>
         <div class="stat reveal"><div class="big">1000</div><div class="lbl">участников на ивентах, которые я организовывал</div></div>
       </div>
       <p class="proofline reveal">Маркетинг, операционка и AI <b>в одном человеке</b>. Я не пересказываю чужие курсы — я строю работающие системы руками.</p>
+    </div>
+  </section>
+
+  <section id="cases-intro" class="section-short">
+    <div class="container">
+      <div class="eyebrow reveal">Кейсы</div>
+      <h2 class="reveal">Что уже собрано руками</h2>
+      <p class="lead reveal">Реальные задачи, которые я закрыл. Слева — задача, справа — как решил.</p>
+    </div>
+  </section>
+
+  <section class="case">
+    <div class="container">
+      <div class="reveal"><span class="case-no">01</span><span class="case-tag">Контент-пайплайн: видео → пакет публикации</span></div>
+      <div class="case-split">
+        <div class="case-col task reveal">
+          <div class="col-label t">Задача</div>
+          <p>YouTube-канал выпускает длинные видео. Из каждого вручную: нарезать вертикальные Reels, выбрать сильные моменты, наложить субтитры, написать заголовки, описание, теги, посты в соцсети, сделать превью. Часы рутины на одно видео — и стиль скачет от раза к разу, смотря кто делал.</p>
+        </div>
+        <div class="case-col sol reveal">
+          <div class="col-label s">Решение</div>
+          <p>Собрал сквозной AI-пайплайн. Локальная транскрибация → отбор сильных фрагментов по правилам хуков → автонарезка вертикальных Reels с субтитрами → готовый пакет публикации: заголовки, описание, теги, посты, промпт превью. Правила зашиты в систему, поэтому результат стабильный, а не «как получится».</p>
+          <div class="case-result"><b>Итог:</b> из одного видео — серия готовых Reels + полный пакет публикации за один прогон.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="case">
+    <div class="container">
+      <div class="reveal"><span class="case-no">02</span><span class="case-tag">Claude Skills под голос проекта</span></div>
+      <div class="case-split">
+        <div class="case-col task reveal">
+          <div class="col-label t">Задача</div>
+          <p>«Промпты в чате» каждый раз дают разный результат: тон плавает, правила теряются, у каждого в команде свой стиль, новичок долго въезжает в «как мы пишем». Знание живёт в головах, а не в системе.</p>
+        </div>
+        <div class="case-col sol reveal">
+          <div class="col-label s">Решение</div>
+          <p>Написал 8 собственных Claude Skills — формализованные правила проекта: заголовки, превью, сценарии Reels, копирайтинг, драматургия. Это не разовые промпты, а воспроизводимые инструкции, которые работают как штатный сотрудник: AI выдаёт результат в голосе проекта по канону.</p>
+          <div class="case-result"><b>Итог:</b> правила вынесены из голов в систему — один тон, один формат, повторяемо.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="case">
+    <div class="container">
+      <div class="reveal"><span class="case-no">03</span><span class="case-tag">Локальная замена платных подписок</span></div>
+      <div class="case-split">
+        <div class="case-col task reveal">
+          <div class="col-label t">Задача</div>
+          <p>Голосовой ввод на Mac (диктовка в любое поле) — это платные сервисы: Wispr Flow $180/год, MacWhisper $59. Хотелось то же самое — но без подписки, без облака и без отправки голоса на чужие серверы.</p>
+        </div>
+        <div class="case-col sol reveal">
+          <div class="col-label s">Решение</div>
+          <p>За вечер собрал локальный аналог: whisper.cpp + фоновый сервер + глобальный хоткей + индикатор в меню-баре. Внутри та же модель, что в платных сервисах, только локально и бесплатно. Пользуюсь каждый день.</p>
+          <div class="case-result"><b>Итог:</b> $180/год → 0, и данные никуда не уходят.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="case">
+    <div class="container">
+      <div class="reveal"><span class="case-no">04</span><span class="case-tag">iOS-приложение без навыков программирования</span></div>
+      <div class="case-split">
+        <div class="case-col task reveal">
+          <div class="col-label t">Задача</div>
+          <p>Нужен виджет на локскрин iPhone, который показывает новое английское слово с пиктограммой — для пассивного изучения. Готового бесплатного решения не было, а я не программист.</p>
+        </div>
+        <div class="case-col sol reveal">
+          <div class="col-label s">Решение</div>
+          <p>С Claude Code собрал и установил на свой iPhone настоящее iOS-приложение (SwiftUI + WidgetKit): виджет на локскрин + полноценное приложение — сотни слов, уровни сложности, несколько экранов. От идеи до работающего на устройстве — без опыта в коде.</p>
+          <div class="case-result"><b>Итог:</b> рабочее iOS-приложение, собранное оператором, а не разработчиком.</div>
+        </div>
+      </div>
     </div>
   </section>
 
